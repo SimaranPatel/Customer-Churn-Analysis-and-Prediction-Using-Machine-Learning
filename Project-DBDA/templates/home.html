@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Churn Prediction</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 50px;
+    }
+    h1 {
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Predict Customer Churn</h1>
+    <form action="/" method="POST">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Input</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Customer ID:</td>
+            <td><input type="text" class="form-control" name="query1" required></td>
+          </tr>
+          <tr>
+            <td>Product Price:</td>
+            <td><input type="number" class="form-control" name="query2" step="0.01" required></td>
+          </tr>
+          <tr>
+            <td>Quantity:</td>
+            <td><input type="number" class="form-control" name="query3" required></td>
+          </tr>
+          <tr>
+            <td>Total Purchase Amount:</td>
+            <td><input type="number" class="form-control" name="query4" step="0.01" required></td>
+          </tr>
+          <tr>
+            <td>Customer Age:</td>
+            <td><input type="number" class="form-control" name="query5" required></td>
+          </tr>
+          <tr>
+            <td>Returns:</td>
+            <td>
+              <select class="form-control" name="query6" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Product Category:</td>
+            <td>
+              <select class="form-control" name="query7" required>
+                <option value="Home">Home</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Books">Books</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Payment Method:</td>
+            <td>
+              <select class="form-control" name="query8" required>
+                <option value="PayPal">PayPal</option>
+                <option value="Cash">Cash</option>
+                <option value="Credit Card">Credit Card</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Gender:</td>
+            <td>
+              <select class="form-control" name="query9" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Predict Customer Churn</button>
+      </div>
+    </form>
+    <br>
+    <div class="text-center">
+      <h4>{{ prediction_text }}</h4>
+    </div>
+  </div>
+</body>
+</html>
